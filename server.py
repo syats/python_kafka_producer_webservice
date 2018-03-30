@@ -9,11 +9,11 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
         self.wfile.write(b'!!Server reachable, use POST method for sending'
-                         b'to kafka topic\n\n')
+                         b'to kafka topic 1\n\n')
 
     def do_POST(self):
-        topic = print(self.headers.get('topic'))
-        broker = print(self.headers.get('broker'))
+        topic = self.headers.get('topic')
+        broker = self.headers.get('broker')
         content_length = int(self.headers.get('Content-Length'))
         body = self.rfile.read(content_length)
 
