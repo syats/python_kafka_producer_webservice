@@ -8,7 +8,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b'!!Server reachable, use post method for sending'
+        self.wfile.write(b'!!Server reachable, use POST method for sending'
                          b'to kafka topic\n\n')
 
     def do_POST(self):
