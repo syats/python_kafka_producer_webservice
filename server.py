@@ -17,15 +17,17 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers.get('Content-Length'))
         body = self.rfile.read(content_length)
 
-        producer = KafkaProducer(bootstrap_servers=[broker])
-        producer.send(topic, body)
-        producer.flush()
 
         self.send_response(200)
         self.end_headers()
         response = BytesIO()
-        response.write(b'sent to kafka ')
+        response.write(b'\nsending to kafka \n')
         self.wfile.write(response.getvalue())
+
+        producer = KafkaProducer(bootstrap_servers=[broker])
+        producer.send(topic, body)
+        producer.flush()
+        response.write(b'\n -- SENT to Kafka \n')
 
 if 'PRODUCER_LISTENING_PORT' in os.environ:
     port = int(os.environ['PRODUCER_LISTENING_PORT'])

@@ -15,11 +15,11 @@ webservices root.
 
 Usage example:
 
-curl -X POST \
-  http://hostWhereDeployed:8666/ \
-  -H 'broker: BrokerHost:Port' \
-  -H 'cache-control: no-cache' \
-  -H 'topic: topic_name' \
+curl -X POST \\
+  http://hostWhereDeployed:8666/ \\
+  -H 'broker: BrokerHost:Port' \\
+  -H 'cache-control: no-cache' \\
+  -H 'topic: topic_name' \\
   -d 'Ah, distinctly I remember it was in the bleak December,
 And each separate dying ember wrought its ghost upon the floor.
 Eagerly I wished the morrow; — vainly I had tried to borrow
