@@ -17,9 +17,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers.get('Content-Length'))
         body = self.rfile.read(content_length)
 
-        # producer = KafkaProducer(bootstrap_servers=[broker])
-        # producer.send(topic, body)
-        # producer.flush()
+        producer = KafkaProducer(bootstrap_servers=[broker])
+        producer.send(topic, body)
+        producer.flush()
 
         self.send_response(200)
         self.end_headers()
