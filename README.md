@@ -1,5 +1,7 @@
 # Kafka Producer Webservice
 
+(c) 2018 Victor Mireles for Semantic Web Company GmbH, Vienna, Austria.
+
 Minimal webservice that takes via post some texts and sends it to a kafka topic
 You need to have access to a Kafka broker.
 The setup makes sense in the following scenario:
