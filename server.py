@@ -1,3 +1,5 @@
+# (c) 2018 Victor Mireles for Semantic Web Company GmbH, Vienna, Austria.
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from kafka import KafkaProducer
 from io import BytesIO
